@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English File Pre-Intermediate • Unit 3A</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --subcard-bg: #21262d;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --accent-blue: #388bfd;
+            --accent-cyan: #39c5cf;
+            --accent-purple: #8957e5;
+            --accent-green: #2ea043;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 860px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* Header Card */
+        .header-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(56, 139, 253, 0.15);
+            color: var(--accent-blue);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 139, 253, 0.3);
+        }
+
+        .header-card h1 {
+            color: var(--text-bright);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section-title {
+            color: var(--accent-cyan);
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Exercise Subcards */
+        .exercise {
+            background-color: var(--subcard-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .exercise-title {
+            color: var(--text-bright);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .instruction {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        li {
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        /* Vocabulary Table */
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .vocab-table th, .vocab-table td {
+            text-align: left;
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .vocab-table th {
+            color: var(--accent-blue);
+            background-color: rgba(56, 139, 253, 0.05);
+            font-weight: 600;
+        }
+
+        .vocab-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .word {
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        /* Reading Box */
+        .text-reading {
+            background-color: #1a202c;
+            border-left: 4px solid var(--accent-blue);
+            padding: 18px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: #d2dff0;
+        }
+
+        .text-reading p {
+            margin-bottom: 12px;
+        }
+        .text-reading p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Grammar Box */
+        .grammar-box {
+            background: linear-gradient(180deg, rgba(137, 87, 229, 0.08) 0%, rgba(137, 87, 229, 0.02) 100%);
+            border: 1px solid rgba(137, 87, 229, 0.3);
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 14px;
+        }
+
+        .grammar-box h4 {
+            color: #d2a8ff;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .rule-example {
+            color: var(--text-bright);
+            font-style: italic;
+            margin-top: 6px;
+        }
+
+        /* Interactive Elements */
+        input[type="text"] {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            color: #f0f6fc;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--accent-blue);
+        }
+
+        details {
+            margin-top: 12px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+            padding: 8px 12px;
+            border: 1px dashed var(--border-color);
+        }
+
+        summary {
+            cursor: pointer;
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        .answer-key {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Card -->
+    <div class="header-card">
+        <span class="badge">English File Pre-Intermediate • Unit 3A</span>
+        <h1>TripAside: No More Boring Stopovers</h1>
+        <p>Vocabulary: Airports & Travel • Grammar: <i>be going to</i> (Plans & Predictions)</p>
+    </div>
+
+    <!-- 1. WARM UP -->
+    <div class="section-card">
+        <div class="section-title">1. Warm-Up</div>
+
+        <div class="exercise">
+            <div class="exercise-title">Exercise 1.1: Airport Experiences</div>
+            <div class="instruction">Answer the questions with your tutor:</div>
+            <ul>
+                <li>When was the last time you went to an airport? Was it to travel somewhere or to pick up / drop off someone?</li>
+                <li>How do you usually feel when you arrive at an airport: stressed, excited, or bored? Why?</li>
+                <li>How many hours before an international flight do you usually arrive?</li>
+            </ul>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-title">Exercise 1.2: Would You Rather? (Travel Edition)</div>
+            <div class="instruction">Choose one option and explain your reasons:</div>
+            <ul>
+                <li><strong>Option A:</strong> Have a 7-hour stopover at a huge modern airport with free Wi-Fi, cinema, and shops.</li>
+                <li><strong>Option B:</strong> Have a 40-minute connection where you have to run through the terminal to catch your next plane.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 2. VOCABULARY -->
+    <div class="section-card">
+        <div class="section-title">2. Vocabulary: Airports</div>
+
+        <!-- Vocab List -->
+        <div class="exercise">
+            <div class="exercise-title">Vocabulary List: Key Airport Terms</div>
+            <div class="instruction">Memorize and pronounce the words correctly:</div>
+            <table class="vocab-table">
+                <thead>
+                    <tr>
+                        <th>Word / Phrase</th>
+                        <th>Translation</th>
+                        <th>Context / Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="word">Arrivals / Departures</td>
+                        <td>Прилёт / Вылет</td>
+                        <td>Where planes land or take off</td>
+                    </tr>
+                    <tr>
+                        <td class="word">Baggage drop-off</td>
+                        <td>Сдача багажа</td>
+                        <td>Where you take your bags after online check-in</td>
+                    </tr>
+                    <tr>
+                        <td class="word">Baggage reclaim</td>
+                        <td>Выдача багажа</td>
+                        <td>Where you collect your luggage from carousels</td>
+                    </tr>
+                    <tr>
+                        <td class="word">Boarding pass</td>
+                        <td>Посадочный талон</td>
+                        <td>The document you need to get on a plane</td>
+                    </tr>
+                    <tr>
+                        <td class="word">Gate</td>
+                        <td>Выход на посадку</td>
+                        <td>Where you wait to board your flight (e.g. Gate 4B)</td>
+                    </tr>
+                    <tr>
+                        <td class="word">Passport control</td>
+                        <td>Паспортный контроль</td>
+                        <td>Where officials check your travel documents</td>
+                    </tr>
+                    <tr>
+                        <td class="word">Security check</td>
+                        <td>Зона досмотра / безопасность</td>
+                        <td>Where luggage and liquids are scanned</td>
+                    </tr>
+                    <tr>
+                        <td class="word">Stopover (layover)</td>
+                        <td>Пересадка (длительная)</td>
+                        <td>A stay between connecting flights</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Vocab Ex 1 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 2.1: Matching Signs</div>
+            <div class="instruction">Match the situations with the correct airport location:</div>
+            <ol>
+                <li>You've just landed and need to find your big suitcase. &rarr; <input type="text" placeholder="location..."></li>
+                <li>You need to show your passport and board the flight. &rarr; <input type="text" placeholder="location..."></li>
+                <li>You have already checked in online, now you must leave your heavy bag. &rarr; <input type="text" placeholder="location..."></li>
+                <li>Officers examine your small bag and ask you to take off your belt. &rarr; <input type="text" placeholder="location..."></li>
+            </ol>
+            <details>
+                <summary>Show answers</summary>
+                <div class="answer-key">1. Baggage reclaim | 2. Gate | 3. Baggage drop-off | 4. Security check</div>
+            </details>
+        </div>
+
+        <!-- Vocab Ex 2 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 2.2: Fill in the Blanks</div>
+            <div class="instruction">Complete the sentences with words from the box: <i>[arrivals, boarding pass, gate, stopover]</i></div>
+            <ol>
+                <li>We had a 6-hour ________ in Frankfurt before taking a plane to New York.</li>
+                <li>Look at the screens! They will announce our ________ number in 10 minutes.</li>
+                <li>I printed my ________ at home, but I also keep the QR code on my smartphone.</li>
+                <li>My dad is waiting for us in ________ with flowers and a warm jacket.</li>
+            </ol>
+            <details>
+                <summary>Show answers</summary>
+                <div class="answer-key">1. stopover | 2. gate | 3. boarding pass | 4. arrivals</div>
+            </details>
+        </div>
+
+        <!-- Vocab Ex 3 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 2.3: Chronological Order</div>
+            <div class="instruction">Put the standard airport steps in logical order (from 1 to 5):</div>
+            <ul>
+                <li>[ &nbsp; ] Go through the security check.</li>
+                <li>[ &nbsp; ] Leave your luggage at the baggage drop-off.</li>
+                <li>[ &nbsp; ] Wait at the gate and board the plane.</li>
+                <li>[ &nbsp; ] Arrive at the airport terminal.</li>
+                <li>[ &nbsp; ] Go through passport control.</li>
+            </ul>
+            <details>
+                <summary>Show answers</summary>
+                <div class="answer-key">Correct order: 1. Arrive at terminal &rarr; 2. Baggage drop-off &rarr; 3. Security check &rarr; 4. Passport control &rarr; 5. Gate & boarding</div>
+            </details>
+        </div>
+    </div>
+
+    <!-- 3. READING -->
+    <div class="section-card">
+        <div class="section-title">3. Reading: No More Boring Stopovers!</div>
+
+        <div class="text-reading">
+            <p>Few things are more depressing than spending hours in an airport terminal waiting for a connecting flight. You are sitting in the departure lounge watching the clock, eating overpriced snacks, and wishing you were anywhere else.</p>
+            <p>Frenchman Emmanuel Rozenblum and his sister Anna were on a stopover at Warsaw's main airport. They realized that outside the airport was a vibrant European city with fantastic museums, restaurants, and sights. However, they were terrified of getting lost or missing their flight, so they stayed in the terminal.</p>
+            <p>That frustrating experience inspired them to launch a startup called <strong>TripAside</strong>. The service arranges personalized guided tours during long connections. A local guide picks travellers up right outside the terminal, takes them on a mini-tour of the city center, and guarantees to bring them back on time. Started in Paris, TripAside has now expanded to London, Rome, Frankfurt, and Madrid.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-title">Exercise 3.1: True, False, or Not Mentioned?</div>
+            <div class="instruction">Read the text carefully and mark each sentence:</div>
+            <ol>
+                <li>Emmanuel and Anna explored Warsaw during their stopover. (T / F / NM) &rarr; <input type="text" placeholder="..."></li>
+                <li>They were afraid of missing their connecting plane. (T / F / NM) &rarr; <input type="text" placeholder="..."></li>
+                <li>TripAside tours are always conducted by bus only. (T / F / NM) &rarr; <input type="text" placeholder="..."></li>
+                <li>Guides guarantee to bring clients back before their flight departs. (T / F / NM) &rarr; <input type="text" placeholder="..."></li>
+            </ol>
+            <details>
+                <summary>Show answers</summary>
+                <div class="answer-key">1. False (they stayed at the terminal) | 2. True | 3. Not Mentioned | 4. True</div>
+            </details>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-title">Exercise 3.2: Vocabulary in Context & Ideas</div>
+            <div class="instruction">Answer the questions based on the text:</div>
+            <ol>
+                <li>Find a phrase in paragraph 1 meaning <i>"food that costs far too much money"</i>. &rarr; <input type="text" placeholder="..."></li>
+                <li>Would you use TripAside if you had a 6-hour layover in Paris or Rome? Why or why not?</li>
+            </ol>
+            <details>
+                <summary>Show answer for Q1</summary>
+                <div class="answer-key">Q1: overpriced snacks</div>
+            </details>
+        </div>
+    </div>
+
+    <!-- 4. GRAMMAR -->
+    <div class="section-card">
+        <div class="section-title">4. Grammar: <i>be going to</i> (Plans & Predictions)</div>
+
+        <!-- Theory Box -->
+        <div class="grammar-box">
+            <h4>Grammar Rule: be going to + Infinitive</h4>
+            <p><strong>1. Future Plans and Intentions:</strong> Use when a decision was made <i>before</i> the moment of speaking.</p>
+            <p class="rule-example">• We <b>are going to book</b> a tour with TripAside tomorrow.<br>• He <b>isn't going to spend</b> his stopover in the lounge.</p>
+            <br>
+            <p><strong>2. Predictions based on present evidence:</strong> Use when you can see right now that something will happen.</p>
+            <p class="rule-example">• Look at those dark clouds! It <b>is going to rain</b>.<br>• The gate is closing! You <b>are going to miss</b> your plane!</p>
+        </div>
+
+        <!-- Grammar Ex 1 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 4.1: Plan or Prediction?</div>
+            <div class="instruction">Decide whether each sentence expresses a <b>Plan (PL)</b> or a <b>Prediction based on evidence (PR)</b>:</div>
+            <ol>
+                <li>Look at the departure board: flight BA204 says "DELAYED". They are going to arrive late. &rarr; [ <input type="text" size="4" placeholder="..."> ]</li>
+                <li>I've saved enough money. I'm going to travel to Japan this autumn. &rarr; [ <input type="text" size="4" placeholder="..."> ]</li>
+                <li>She is holding 4 big bags and can barely walk. She's going to drop them! &rarr; [ <input type="text" size="4" placeholder="..."> ]</li>
+                <li>We aren't going to eat at the airport café because it's too expensive. &rarr; [ <input type="text" size="4" placeholder="..."> ]</li>
+            </ol>
+            <details>
+                <summary>Show answers</summary>
+                <div class="answer-key">1. PR (evidence on board) | 2. PL (plan/decision) | 3. PR (evidence) | 4. PL (plan/intention)</div>
+            </details>
+        </div>
+
+        <!-- Grammar Ex 2 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 4.2: Gap Fill (Plans)</div>
+            <div class="instruction">Complete the sentences with the correct form of <b>be going to</b> and the verb in brackets:</div>
+            <ol>
+                <li>Jake ____________ (meet) his guide at terminal exit 3 at 14:00.</li>
+                <li>They ____________ (not take) a taxi because the traffic is terrible.</li>
+                <li>What ____________ you ____________ (do) during your 5-hour layover?</li>
+                <li>Sarah ____________ (visit) the Louvre while she is waiting for her connection.</li>
+            </ol>
+            <details>
+                <summary>Show answers</summary>
+                <div class="answer-key">1. is going to meet | 2. aren't going to take | 3. are you going to do | 4. is going to visit</div>
+            </details>
+        </div>
+
+        <!-- Grammar Ex 3 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 4.3: Situational Predictions</div>
+            <div class="instruction">Write a sentence with <b>be going to</b> using the clue in brackets:</div>
+            <ol>
+                <li>A passenger is running to gate 12, but the door is already shutting. (miss / the plane) &rarr; <br><i>He _________________________________________________ .</i></li>
+                <li>The flight attendant is bringing food carts down the aisle. (serve / lunch) &rarr; <br><i>She _________________________________________________ .</i></li>
+            </ol>
+            <details>
+                <summary>Show answers</summary>
+                <div class="answer-key">1. He is going to miss the plane. | 2. She is going to serve lunch.</div>
+            </details>
+        </div>
+
+        <!-- Grammar Ex 4 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 4.4: Fix the Mistakes</div>
+            <div class="instruction">Find and correct one grammatical mistake in each sentence:</div>
+            <ol>
+                <li>She going to fly to Rome next Tuesday. &rarr; <input type="text" style="width: 80%;" placeholder="corrected sentence..."></li>
+                <li>We are going to visiting the British Museum on our stopover. &rarr; <input type="text" style="width: 80%;" placeholder="corrected sentence..."></li>
+            </ol>
+            <details>
+                <summary>Show answers</summary>
+                <div class="answer-key">1. She <b>is</b> going to fly... | 2. We are going to <b>visit</b> (infinitive, not -ing)</div>
+            </details>
+        </div>
+    </div>
+
+    <!-- 5. SPEAKING -->
+    <div class="section-card">
+        <div class="section-title">5. Speaking</div>
+
+        <div class="exercise">
+            <div class="exercise-title">Task 5.1: Plan Your Stopover Tour (Role-Play)</div>
+            <div class="instruction">Imagine you have an 8-hour stopover in one of these cities: <b>Paris, London, Istanbul, or Rome</b>. Discuss your plan with your tutor using <i>be going to</i>:</div>
+            <ul>
+                <li>Which city did you choose and what time are you leaving the airport?</li>
+                <li>What 2–3 places are you going to see?</li>
+                <li>Where and what are you going to eat?</li>
+                <li>What time are you going to return to the airport to avoid missing your flight?</li>
+            </ul>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-title">Task 5.2: TripAside Pitch</div>
+            <div class="instruction">Imagine you work for TripAside and you must convince a tired, nervous passenger to leave the airport terminal and take your tour:</div>
+            <ul>
+                <li>Address their fear: <i>"What if we get stuck in traffic and miss the flight?"</i></li>
+                <li>Describe what exciting things they are going to experience in the city instead of sitting in the terminal.</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
